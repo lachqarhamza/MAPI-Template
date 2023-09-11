@@ -1,12 +1,12 @@
 {
-  "name": "lma39ol-api",
+  "name": "m-api-template",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serveDev": "cross-env NODE_ENV=dev nodemon --exec babel-node ./src/index.js",
+    "serveDev": "cross-env NODE_ENV=dev nodemon --exec babel-node ./index.js",
     "serveProd": "cross-env NODE_ENV=prod npm run clean && npm run build && pm2 start ./dist/index.js",
-    "test": "cross-env NODE_ENV=test jest src/features/merchants/useCases/update --watch --runInBand --testTimeout=1000000 --colors",
+    "test": "cross-env NODE_ENV=test jest ./features --watch --runInBand --testTimeout=1000000 --colors",
     "e2eTest": "cross-env NODE_ENV=test jest ./__test__/ --runInBand --testTimeout=1000000 --colors"
   },
   "author": "LACHQAR HAMZA",
