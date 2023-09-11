@@ -1,0 +1,48 @@
+{
+  "name": "lma39ol-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serveDev": "cross-env NODE_ENV=dev nodemon --exec babel-node ./src/index.js",
+    "serveProd": "cross-env NODE_ENV=prod npm run clean && npm run build && pm2 start ./dist/index.js",
+    "test": "cross-env NODE_ENV=test jest src/features/merchants/useCases/update --watch --runInBand --testTimeout=1000000 --colors",
+    "e2eTest": "cross-env NODE_ENV=test jest ./__test__/ --runInBand --testTimeout=1000000 --colors"
+  },
+  "author": "LACHQAR HAMZA",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "is-empty": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment-timezone": "^0.5.39",
+    "mongoose": "^7.0.4",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.9.3",
+    "twilio": "^4.14.0",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.4",
+    "babel-jest": "^24.4.0",
+    "babel-plugin-inline-dotenv": "^1.2.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^5.15.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^28.1.0",
+    "mongodb-memory-server": "^8.7.2",
+    "nodemon": "^2.0.4",
+    "rimraf": "^2.6.3",
+    "supertest": "^4.0.2"
+  }
+}
